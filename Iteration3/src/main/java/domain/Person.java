@@ -7,7 +7,7 @@ public class Person {
 	private String surname;
 	private int contactNumber;
 	private String fullAddress;
-
+	
 	public Person() {
 		// TODO - implement Person.Person
 		throw new UnsupportedOperationException();

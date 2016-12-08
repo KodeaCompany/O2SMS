@@ -8,7 +8,7 @@ public class Sanction {
 	private int pointsReduction;
 	private Date dateOfReception;
 	private Date dateOfPayment;
-
+	
 	public Sanction() {
 		// TODO - implement Sanction.Sanction
 		throw new UnsupportedOperationException();
