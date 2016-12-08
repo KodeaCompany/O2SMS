@@ -9,7 +9,7 @@ public class Inquiry_DAO {
 	 * @param i
 	 */
 	public void insert(Inquiry i) {
-		// TODO - implement Inquiry_DAO.insert
+		// TODO- implement Inquiry_DAO.insert
 		throw new UnsupportedOperationException();
 	}
 

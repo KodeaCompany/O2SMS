@@ -13,7 +13,7 @@ public class Inquiry {
 	 * @param maxSpeedAllowed
 	 */
 	public Inquiry(double carSpeed, double maxSpeedAllowed) {
-		// TODO - implement Inquiry.Inquiry
+		// TODO- implement Inquiry.Inquiry
 		throw new UnsupportedOperationException();
 	}
 
