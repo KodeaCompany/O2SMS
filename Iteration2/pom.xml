@@ -5,11 +5,11 @@
   <parent>
     <groupId>kodea</groupId>
     <artifactId>O2SMS</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0-0.0.1-09.12.16</version>
   </parent>
   <groupId>ulises</groupId>
   <artifactId>Iteration2</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.3-0.0.2-09.12.16</version>
   <name>Iteration2</name>
   <url>http://maven.apache.org</url>
   <properties>
