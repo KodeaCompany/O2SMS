@@ -1,6 +1,6 @@
-package Persistence.;
+package persistence;
 
-import Domain..*;
+import domain.*;
 
 public class Person_DAO {
 

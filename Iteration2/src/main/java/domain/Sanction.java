@@ -1,31 +1,71 @@
-package Domain.;
+package domain;
+import java.util.Date;
+import persistence.Sanction_DAO;
 
 public class Sanction {
 
 	Inquiry inquiry;
-	private int id;
+	private String id;
 	private double amountToPay;
 	private int pointsReduction;
 	private Date dateOfReception;
 	private Date dateOfPayment;
+	private Driver driver;
 
 	/**
 	 * 
 	 * @param i
 	 */
 	public Sanction(Inquiry i) {
-		// TODO - implement Sanction.Sanction
-		throw new UnsupportedOperationException();
+		
+		Sanction_DAO s_dao = new Sanction_DAO();
+		calculatePoints(i);
+		calculateAmountToPay(i);
+		this.id = "ulises";
+		s_dao.insert(this);
 	}
 
-	public void calculatePoints() {
-		// TODO - implement Sanction.calculatePoints
-		throw new UnsupportedOperationException();
+	public void calculatePoints(Inquiry i) {
+		double carSpeed = i.getCarSpeed();
+		double maxSpeedAllowed = i.getMaxSpeedAllowed();
+		int mean = (int)carSpeed - (int)maxSpeedAllowed;
+		
+		if (mean <= 20){
+			this.pointsReduction = 0;
+			
+		} else if (mean <= 30){
+			this.pointsReduction = 2;
+			
+		} else if (mean <= 40){
+			this.pointsReduction = 4;
+			
+		} else if (mean <= 51){
+			this.pointsReduction = 6;
+			
+		}		
 	}
 
-	public void calculateAmountToPay() {
-		// TODO - implement Sanction.calculateAmountToPay
-		throw new UnsupportedOperationException();
+	public void calculateAmountToPay(Inquiry i) {
+		double carSpeed = i.getCarSpeed();
+		double maxSpeedAllowed = i.getMaxSpeedAllowed();
+		int mean = (int)carSpeed - (int)maxSpeedAllowed;
+		
+		if (mean <= 20){
+			this.amountToPay = 100;
+			
+		} else if (mean <= 30){
+			this.amountToPay = 300;
+			
+		} else if (mean <= 40){
+			this.amountToPay = 400;
+			
+		} else if (mean <= 50){
+			this.amountToPay = 500;
+			
+		} else if (mean <= 51){
+			this.amountToPay = 600;
+			
+		}
 	}
 
 	public double getAmountToPay() {
@@ -45,8 +85,7 @@ public class Sanction {
 	}
 
 	public Driver getDriver() {
-		// TODO - implement Sanction.getDriver
-		throw new UnsupportedOperationException();
+		return this.driver;
 	}
 
 }

@@ -1,4 +1,5 @@
-package Domain.;
+package domain;
+import java.util.Date;
 
 public class Inquiry {
 
@@ -13,8 +14,8 @@ public class Inquiry {
 	 * @param maxSpeedAllowed
 	 */
 	public Inquiry(double carSpeed, double maxSpeedAllowed) {
-		// TODO - implement Inquiry.Inquiry
-		throw new UnsupportedOperationException();
+		this.carSpeed = carSpeed;
+		this.maxSpeedAllowed = maxSpeedAllowed;
 	}
 
 	public int getId() {

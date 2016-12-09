@@ -1,14 +1,14 @@
-package Persistence.;
+package persistence;
+import  domain.Sanction;
+import java.sql.SQLException;
+import persistence.DBBroker;
 
 public class Sanction_DAO {
-
-	/**
-	 * 
-	 * @param s
-	 */
-	public void insert(Sanction s) {
-		// TODO - implement Sanction_DAO.insert
-		throw new UnsupportedOperationException();
+	
+	private DBBroker broker = new DBBroker();
+	
+	public void insert(Sanction s){
+		broker.change("INSERT INTO sanction (id,amount) VALUES (10,6);");
 	}
 
 }

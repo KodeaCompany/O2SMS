@@ -1,4 +1,4 @@
-package Domain.;
+package domain;
 
 public class Person {
 
@@ -27,6 +27,14 @@ public class Person {
 	 */
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+	
+	/**
+	 * 
+	 * @param dni
+	 */
+	public String getDni() {
+		return this.dni;
 	}
 
 }
