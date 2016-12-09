@@ -1,44 +1,55 @@
 package persistence;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DBBroker {
-
-	private String cadCon = "jdbc:ucanaccess://C:\\Users\\JAVIER OLIVER ASUS\\Desktop\\uni\\1º cuatrimestre (3)\\IngSoft2\\practicas\\GestaBox\\Gestabox.accdb";
-
-	private Connection conn;
+	
+	private Connection connection;
 	private static DBBroker instance = null;
-
-	private DBBroker() throws Exception{
-		Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-		conn = DriverManager.getConnection(cadCon);
+	
+	public DBBroker(){		
+		try {
+		   Class.forName("com.mysql.jdbc.Driver");
+		   connection = DriverManager.getConnection ("jdbc:mysql://localhost/multas","root", "CONTRASEÑA");		   	   
+		} catch (Exception e)	{
+		   e.printStackTrace();
+		} 
 	}
 
-	public static DBBroker GetInstance(){
+	public static DBBroker GetInstance() {
 		if(instance == null){
 			try {
 				instance = new DBBroker();
 			} catch (Exception e) {
-
+				e.printStackTrace();
 			}
 		}
 		return instance;
 	}
 	
-	public ResultSet read(String sql) throws SQLException{
-		Statement s = conn.createStatement();
-		ResultSet rs = s.executeQuery(sql);
+	public int change(String sql){
+		int rs = 0;
+		try {
+			Statement s = connection.createStatement();
+			rs = s.executeUpdate(sql);
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return rs;
-
 	}
 	
-	public int change(String sql) throws SQLException{
-		Statement s = conn.createStatement();
-		int res = s.executeUpdate(sql);
-		return res;
-	} 	
+	public ResultSet read(String sql){
+		Statement s = null;
+		ResultSet rs = null;
+		try {
+			s = connection.createStatement();
+			rs = s.executeQuery(sql);
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
 }
+
