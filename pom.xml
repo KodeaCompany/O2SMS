@@ -5,7 +5,7 @@
   <groupId>kodea</groupId>
   <artifactId>O2SMS</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>O2SMS</name>
   <url>http://maven.apache.org</url>
@@ -38,4 +38,7 @@
 	</pluginManagement>
 
 </build>
+	<modules>
+		<module>Iteration2</module>
+	</modules>
 </project>
