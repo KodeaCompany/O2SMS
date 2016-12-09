@@ -13,11 +13,7 @@ public class Sanction_DAO {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param s
-	 */
-	public void read(Sanction s) {
+	public void readSanction(Sanction s) {
 		// TODO - implement Sanction_DAO.read
 		throw new UnsupportedOperationException();
 	}

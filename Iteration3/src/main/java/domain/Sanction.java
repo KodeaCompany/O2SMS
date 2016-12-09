@@ -1,6 +1,9 @@
 package domain;
 import java.util.Date;
 
+import persistence.Driver_DAO;
+import persistence.Sanction_DAO;
+
 public class Sanction {
 
 	private int id;
@@ -8,9 +11,11 @@ public class Sanction {
 	private int pointsReduction;
 	private Date dateOfReception;
 	private Date dateOfPayment;
+	private Sanction_DAO s_dao;
 	
-	public Sanction() {
-		// TODO - implement Sanction.Sanction
+	public Sanction(int id, double amountToPay, int pointsReduction, Date dateOfREception) {
+		Sanction_DAO s_dao = new Sanction_DAO();
+		s_dao.readSanction(this);
 		throw new UnsupportedOperationException();
 	}
 
@@ -18,10 +23,6 @@ public class Sanction {
 		return this.id;
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -30,10 +31,6 @@ public class Sanction {
 		return this.amountToPay;
 	}
 
-	/**
-	 * 
-	 * @param amountToPay
-	 */
 	public void setAmountToPay(double amountToPay) {
 		this.amountToPay = amountToPay;
 	}
@@ -42,10 +39,6 @@ public class Sanction {
 		return this.pointsReduction;
 	}
 
-	/**
-	 * 
-	 * @param pointsReduction
-	 */
 	public void setPointsReduction(int pointsReduction) {
 		this.pointsReduction = pointsReduction;
 	}
@@ -54,10 +47,6 @@ public class Sanction {
 		return this.dateOfReception;
 	}
 
-	/**
-	 * 
-	 * @param dateOfReception
-	 */
 	public void setDateOfReception(Date dateOfReception) {
 		this.dateOfReception = dateOfReception;
 	}
@@ -66,12 +55,9 @@ public class Sanction {
 		return this.dateOfPayment;
 	}
 
-	/**
-	 * 
-	 * @param dateOfPayment
-	 */
 	public void setDateOfPayment(Date dateOfPayment) {
 		this.dateOfPayment = dateOfPayment;
+		s_dao.updatePayments();
 	}
 
 	public Driver getDriver() {
@@ -79,23 +65,11 @@ public class Sanction {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param d
-	 */
+
 	public void setDriver(Driver d) {
 		// TODO - implement Sanction.setDriver
 		throw new UnsupportedOperationException();
 	}
 
-	public void calculatePoints() {
-		// TODO - implement Sanction.calculatePoints
-		throw new UnsupportedOperationException();
-	}
-
-	public void calculateAmountToPay() {
-		// TODO - implement Sanction.calculateAmountToPay
-		throw new UnsupportedOperationException();
-	}
 
 }
