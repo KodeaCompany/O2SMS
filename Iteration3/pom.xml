@@ -9,7 +9,7 @@
   </parent>
   <groupId>clara</groupId>
   <artifactId>Iteration3</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.3-0.0.2-09.12.16</version>
   <name>Iteration3</name>
   <url>http://maven.apache.org</url>
   <properties>
