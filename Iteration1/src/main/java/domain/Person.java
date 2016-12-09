@@ -1,4 +1,4 @@
-package Domain.;
+package domain;
 
 public class Person {
 
@@ -10,6 +10,7 @@ public class Person {
 
 	public Person() {
 		// TODO- implement Person.Person
+		
 		throw new UnsupportedOperationException();
 	}
 

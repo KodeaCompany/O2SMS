@@ -1,14 +1,15 @@
-package Persistence;
+package persistence;
+import domain.Vehicle;
+
 
 public class Vehicle_DAO {
 
-	/**
-	 * 
-	 * @param v
-	 */
+	DBBroker dbb =new DBBroker();
 	public void read(Vehicle v) {
-		// TODO- implement Vehicle_DAO.read
-		throw new UnsupportedOperationException();
+		//String dni=dbb.read("");
+		//v.getOwner().setDni(dni);
+		
+
 	}
 
 }

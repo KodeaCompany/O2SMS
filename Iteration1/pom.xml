@@ -9,8 +9,8 @@
   </parent>
   <groupId>victor</groupId>
   <artifactId>Iteration1</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
-  <name>Iteration2</name>
+  <version>0.0.2-0.0.3-09.12.16</version>
+  <name>Iteration1</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,4 +23,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <description>Presentation and domain complete,DAO classes not finished until DBBroker entirely implemented, includes DBBroker without sql sentences.</description>
 </project>

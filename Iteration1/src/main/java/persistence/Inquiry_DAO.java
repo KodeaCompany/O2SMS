@@ -1,15 +1,14 @@
-package Persistence;
+package persistence;
 
-import Domain.*;
+import domain.*;
 
 public class Inquiry_DAO {
 
-	/**
-	 * 
-	 * @param i
-	 */
+	DBBroker dbb =new DBBroker();
 	public void insert(Inquiry i) {
-		// TODO- implement Inquiry_DAO.insert
+		
+		//dbb.change("");
+		
 		throw new UnsupportedOperationException();
 	}
 

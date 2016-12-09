@@ -1,4 +1,6 @@
-package Domain;
+package domain;
+import java.util.Date;
+import persistence.Inquiry_DAO;
 
 public class Inquiry {
 
@@ -6,17 +8,21 @@ public class Inquiry {
 	private Date date;
 	private double carSpeed;
 	private double maxSpeedAllowed;
-
+	private	Vehicle v;
+	
 	/**
 	 * 
 	 * @param carSpeed
 	 * @param maxSpeedAllowed
 	 */
-	public Inquiry(double carSpeed, double maxSpeedAllowed) {
+	public Inquiry(double carSpeed, double maxSpeedAllowed,Vehicle vehicle) {
 		// TODO- implement Inquiry.Inquiry
-		throw new UnsupportedOperationException();
+		this.carSpeed=carSpeed;
+		this.maxSpeedAllowed=maxSpeedAllowed;
+		this.v=vehicle;
+		Inquiry_DAO idao=new Inquiry_DAO();
+		idao.insert(this);
 	}
-
 	/**
 	 * 
 	 * @param id
