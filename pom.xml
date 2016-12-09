@@ -4,7 +4,7 @@
 
   <groupId>kodea</groupId>
   <artifactId>O2SMS</artifactId>
-  <version>0.0.3-0.0.2-09.12.16-SNAPSHOT</version>
+  <version>0-0.0.1-09.12.16</version>
   <packaging>pom</packaging>
 
   <name>O2SMS</name>
