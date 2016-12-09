@@ -1,21 +1,19 @@
 package persistence;
 
+import java.sql.SQLException;
+
 import domain.*;
 
 public class Person_DAO {
 
 	public Person_DAO() {
-		// TODO - implement Person_DAO.Person_DAO
-		throw new UnsupportedOperationException();
+	}
+	
+	public void read(Person p) {
 	}
 
-	/**
-	 * 
-	 * @param p
-	 */
-	public void read(Person p) {
-		// TODO - implement Person_DAO.read
-		throw new UnsupportedOperationException();
+	public int update(Person p) throws SQLException {
+		return DBBroker.GetInstance().change("");
 	}
 
 }

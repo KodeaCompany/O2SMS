@@ -1,27 +1,35 @@
 package domain;
 
+import java.sql.SQLException;
+
+import persistence.*;
+
 public class Owner extends Person {
 
+	private Owner[] owners;
+	private Person_DAO daoPerson;
+	
 	public Owner() {
-		// TODO - implement Owner.Owner
-		throw new UnsupportedOperationException();
+		this.daoPerson = new Person_DAO();
 	}
 
-	/**
-	 * 
-	 * @param dni
-	 * @param name
-	 * @param lastName
-	 * @param fullAddress
-	 */
-	public Owner(String dni, String name, String lastName, String fullAddress) {
-		// TODO - implement Owner.Owner
-		throw new UnsupportedOperationException();
+	
+	public Owner(String dni, String name, String lastName, int contactNumber, String fullAddress, Owner[] owners) {
+		super(dni, name, lastName, contactNumber, fullAddress);
+		this.owners = owners;
+		this.daoPerson = new Person_DAO();
 	}
 
-	public Vehicle[] getVehicles() {
-		// TODO - implement Owner.getVehicles
-		throw new UnsupportedOperationException();
+	public Owner[] getOwners() {
+		return this.owners;
 	}
+	
+    public void readOwner() {    
+    	this.daoPerson.read(this);
+    }
+    
+    public int updateOwner() throws SQLException {    
+    	return daoPerson.update(this);
+    }
 
 }

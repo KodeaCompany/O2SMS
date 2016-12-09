@@ -1,49 +1,40 @@
 package domain;
 
+import java.sql.SQLException;
+
+import persistence.*;
+
 public class Vehicle {
 
 	private String plateNumber;
 	private String brand;
 	private String model;
+	private Owner owner;
+	private Vehicle_DAO daoVehicle;
 
 	public Vehicle() {
-		// TODO - implement Vehicle.Vehicle
-		throw new UnsupportedOperationException();
+		this.daoVehicle = new Vehicle_DAO();
 	}
 
-	/**
-	 * 
-	 * @param license
-	 * @param brand
-	 * @param model
-	 */
-	public Vehicle(String license, String brand, String model) {
-		// TODO - implement Vehicle.Vehicle
-		throw new UnsupportedOperationException();
+	public Vehicle(String plateNumber, String brand, String model) {
+		this.plateNumber = plateNumber;
+		this.brand = brand;
+		this.model = model;
+		this.daoVehicle = new Vehicle_DAO();
 	}
 
 	public Owner getOwner() {
-		// TODO - implement Vehicle.getOwner
-		throw new UnsupportedOperationException();
+		return this.owner;
 	}
 
-	/**
-	 * 
-	 * @param owner
-	 */
 	public void setOwner(Owner owner) {
-		// TODO - implement Vehicle.setOwner
-		throw new UnsupportedOperationException();
+		this.owner = owner;
 	}
 
 	public String getPlateNumber() {
 		return this.plateNumber;
 	}
 
-	/**
-	 * 
-	 * @param plateNumber
-	 */
 	public void setPlateNumber(String plateNumber) {
 		this.plateNumber = plateNumber;
 	}
@@ -52,10 +43,7 @@ public class Vehicle {
 		return this.brand;
 	}
 
-	/**
-	 * 
-	 * @param brand
-	 */
+
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
@@ -64,12 +52,16 @@ public class Vehicle {
 		return this.model;
 	}
 
-	/**
-	 * 
-	 * @param model
-	 */
 	public void setModel(String model) {
 		this.model = model;
 	}
+	
+    public void readVehicle() {    
+    	this.daoVehicle.read(this);
+    }
+    
+    public int updateVehicle() throws SQLException {    
+    	return daoVehicle.updateOwner(this);
+    }
 
 }

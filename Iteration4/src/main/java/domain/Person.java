@@ -1,5 +1,7 @@
 package domain;
 
+import persistence.*;
+
 public class Person {
 
 	private String dni;
@@ -7,23 +9,19 @@ public class Person {
 	private String surname;
 	private int contactNumber;
 	private String fullAddress;
+	private Person_DAO daoPerson;
 
 	public Person() {
-		// TODO - implement Person.Person
-		throw new UnsupportedOperationException();
+		this.daoPerson = new Person_DAO();
 	}
 
-	/**
-	 * 
-	 * @param dni
-	 * @param name
-	 * @param surname
-	 * @param contactNumber
-	 * @param fullAddress
-	 */
 	public Person(String dni, String name, String surname, int contactNumber, String fullAddress) {
-		// TODO - implement Person.Person
-		throw new UnsupportedOperationException();
+		this.dni = dni;
+		this.name = name;
+		this.surname = surname;
+		this. contactNumber = contactNumber;
+		this.fullAddress = fullAddress;
+		this.daoPerson = new Person_DAO();
 	}
 
 	public String getDni() {

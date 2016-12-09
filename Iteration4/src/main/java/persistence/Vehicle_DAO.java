@@ -1,26 +1,19 @@
 package persistence;
 
+import java.sql.SQLException;
+
 import domain.*;
 
 public class Vehicle_DAO {
 
 	public Vehicle_DAO() {
-		// TODO - implement Vehicle_DAO.Vehicle_DAO
-		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param v
-	 */
 	public void read(Vehicle v) {
-		// TODO - implement Vehicle_DAO.read
-		throw new UnsupportedOperationException();
 	}
 
-	public void updateOwner() {
-		// TODO - implement Vehicle_DAO.updateOwner
-		throw new UnsupportedOperationException();
+	public int updateOwner(Vehicle v) throws SQLException {
+		return DBBroker.GetInstance().change("");
 	}
 
 }
