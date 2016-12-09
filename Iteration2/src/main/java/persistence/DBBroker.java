@@ -10,7 +10,7 @@ public class DBBroker {
 		try
 		{
 		   Class.forName("com.mysql.jdbc.Driver");
-		   conexion = DriverManager.getConnection ("jdbc:mysql://localhost/multas","ulises", "12345678");
+		   conexion = DriverManager.getConnection ("jdbc:mysql://localhost/multas","kodea", "12345678");
 		   	   
 		} catch (Exception e)
 		{

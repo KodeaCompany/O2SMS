@@ -14,8 +14,6 @@ public class Inquiry {
 	 * @param maxSpeedAllowed
 	 */
 	public Inquiry(double carSpeed, double maxSpeedAllowed) {
-		this.carSpeed = carSpeed;
-		this.maxSpeedAllowed = maxSpeedAllowed;
 	}
 
 	public int getId() {
